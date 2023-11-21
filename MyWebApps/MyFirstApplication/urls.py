@@ -23,8 +23,8 @@ urlpatterns = [
     re_path('signup', login_view.signup),
     re_path('login', login_view.login),
     re_path('test_token', login_view.test_token),
-    path(include(router.urls)),
-    path(include(router1.urls)),
-    path(include(router2.urls)),
-    path(include(router3.urls)),
+    path("users/", include(router.urls)),
+    path("userprefs/", include(router1.urls)),
+    path("preferences/", include(router2.urls)),
+    path("followers/", include(router3.urls)),
 ]
