@@ -164,7 +164,7 @@
 ...
 
 ##  Diagrama Entidad-Relación
-    ...
+![alt text](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffeb49bee-9cd1-4bcb-a0dd-c7dca6a650ae%2Fd6aae043-343e-4d6b-95aa-c58fffddd7c0%2FUntitled.png?table=block&id=3d388a59-af5b-4ea6-aa9d-2a90a5e05c08&spaceId=feb49bee-9cd1-4bcb-a0dd-c7dca6a650ae&width=2000&userId=0aa2e18a-586b-40e8-b6c6-1959f35888d8&cache=v2)
     
 
 ##  Administración con Django
