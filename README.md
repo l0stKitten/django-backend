@@ -137,11 +137,20 @@
 ##  Modelo de datos
     El modelo de datos esta conformado por las siguientes entidades.
 
-    -   Usuarios : Esta es la entidad principal, ya que será el que usa el sistema desde su registro hasta las acciones que se realice.
-    -   Publicaciones :
-    - 
-
-    ...
+    -  Users : Esta es la entidad principal, ya que será el que usa el sistema desde su registro hasta las acciones que se realice.
+    -  Preferences : Entidad relacionada con usuarios, preferencias o gustos de cada usuario.
+    -  Followers : Esta es una entidad que contendrá los usuarios seguidores de otros usuarios.
+    -  Posts : Entidad que contendrá cada publicación que realicen los usuarios.
+    -  Reactions : Es la entidad que contiene las reacciones a las publicaciones de cada usuario.
+    -  Comments : Entidad útil para el almacenamiento de los comentarios que habrá entre usuarios.
+    -  Notifications : Es una entidad para las notificaciones que recibirán los usuarios.
+    -  Challenges : Es la entidad donde se alojarán los retos de los post que realice cada usuario.
+    -  Participations : Entidad para almacenar y gestionar las participaciones de los usuarios en los retos.
+    -  GroupChats: Es la table que contiene los Grupos de chats entre usuarios.
+    -  Members: Es la lista de usuarios que pertenecen a un chat.
+    -  Messages : Entidad de los mensajes que tienen los chats.
+    -  ChallengesCategory : Entidad donde están las categorias de los retos.
+    -  Categories : Es la entidad que contendrá las categorias que se creen para los retos.
 
 ##  Diccionario de datos
 
