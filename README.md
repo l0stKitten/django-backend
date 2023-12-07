@@ -154,23 +154,8 @@
 
 ##  Diccionario de datos
 
-    En la construcción de software y en el diccionario de datos sobre todo se recomienda y se utilizará el idioma inglés para especificar objetos, atributos, etc.
-
-| Course | | | | | |
-| -- | -- | -- | -- | -- | -- |
-| Atributo  | Tipo  | Nulo | Clave | Predeterminado | Descripción |
-| code  | Numerico| No | Si | Ninguno | Código |
-| name  | Cadena| No | No | Ninguno | Nombre |
-...
-
-| Teacher | | | | | |
-| -- | -- | -- | -- | -- | -- |
-| Atributo  | Tipo  | Nulo | Clave | Predeterminado | Descripción |
-| code  | Numerico| No | Si | Ninguno | Código |
-| name | Cadena| No | No | Ninguno | Nombres |
-| email | Cadena| No | No | Ninguno | Correo electrónico |
-| gender | Fecha| Si | No | NULL | Fecha de nacimiento |
-...
+    Para el acceso al diccionario de datos, se debe clonar el proyecto, ingresar a la carpeta "Diccionario de Datos" y ejecutar el archivo "index.html".
+    Este archivo contiene el diccionario detallado, estilizado y categorizado con todos los elementos útiles y necesarios usados en la Base de Datos.
 
 ##  Diagrama Entidad-Relación
 ![alt text](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffeb49bee-9cd1-4bcb-a0dd-c7dca6a650ae%2Fd6aae043-343e-4d6b-95aa-c58fffddd7c0%2FUntitled.png?table=block&id=3d388a59-af5b-4ea6-aa9d-2a90a5e05c08&spaceId=feb49bee-9cd1-4bcb-a0dd-c7dca6a650ae&width=2000&userId=0aa2e18a-586b-40e8-b6c6-1959f35888d8&cache=v2)
