@@ -200,19 +200,25 @@
     
 ##  Plantillas Bootstrap
     Para la aplicación desarrolada no se usó plantillas gráficas, se inició desde cero.
+    Se usó "Reac" materia UI, el proyecto está en https://mui.com/material-ui/
 
 ##  CRUD - Core Business - Clientes finales
     El núcleo de negocio del sistema de inscripciones tiene valor de aceptación para los cliente finales (alumnos) radica en realizar el proceso de inscripción propiamente, que empieza desde que:
-    1. El usuario inicia sesión.
-    2. El alumno selecciona el o los cursos donde desea realizar una inscripción.
-    3. El alumno selecciona el grupo de laboatorio donde desea incribirse.
-    4. El alumno puede tener la posibilidad de anular una incripción por varias razones: cambio de grupo, corregir error, etc.
-    5. El alumno puede ver el consolidado de sus inscripciones.
-    6. El alumno cierra sesión.
+    1. El usuario se registra en el sistema.
+    2. El usuario inicia sesión.
+    3. El alumno selecciona todas sus preferencias con respecto a los retos.
+    4. El usuario puede administrar, editar o modificar los datos con respecto a él.
+    5. El usuario puede ver distintos post de retos en una pasarela de retos.
+    6. El usuario puede comentar los post.
+    7. El usuario puede inscribirse a retos elegidos.
+    8. El usuario puede reaccionar a los retos posteados.
+    9. El usuario cierra sesión.
 
-    Todas y cada una de estas pantallas debe funcionar en la plantilla bootstrap.
     A continuación se muestran las actividades realizadas para su construcción:
-    ...
+
+    imágenes...
+
+    
 
 ##  Servicios mediante una API RESTful
     Se ha creado una aplicación que pondra a disposición cierta información para ser consumida por otros clientes HTTP.
