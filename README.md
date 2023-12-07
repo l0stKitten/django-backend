@@ -200,7 +200,7 @@
     
 ##  Plantillas Bootstrap
     Para la aplicación desarrolada no se usó plantillas gráficas, se inició desde cero.
-    Se usó "Reac" materia UI, el proyecto está en https://mui.com/material-ui/
+    Se usó "Reac" materia UI, el proyecto está en este [link](https://mui.com/material-ui/)
 
 ##  CRUD - Core Business - Clientes finales
     El núcleo de negocio del sistema de inscripciones tiene valor de aceptación para los cliente finales (alumnos) radica en realizar el proceso de inscripción propiamente, que empieza desde que:
