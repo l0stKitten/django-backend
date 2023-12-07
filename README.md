@@ -162,31 +162,31 @@
     
 
 ##  Administración con Django
-    - Paso 1: Crear y ejecutar un entorno virtual 
+### Paso 1: Crear y ejecutar un entorno virtual 
         $ python -m venv my_env
         $ .\my_env\Scripts\activate
         
-    - Paso 2: Crear un nuevo proyecto Django
+### Paso 2: Crear un nuevo proyecto Django
         $ django-admin startproject nombre_del_proyecto
         $ cd nombre_del_proyecto
 
-    - Paso 3: Crear una aplicacion Django
+### Paso 3: Crear una aplicacion Django
         $ mkdir MyWebApps
         $ cd MyWebApps
         $ django-admin startapp MyFirstApplication
     
-    - Paso 4: Definir los modelos
+### Paso 4: Definir los modelos
         Ya sea modificar el archivo models.py o crear una carpeta models y dentro de ella establecer un modelo para cada entidad.
     
-    - Paso 5 Crear migraciones
+### Paso 5 Crear migraciones
         $ python manage.py makemigrations
         $ python manage.py migrate
 
-    - Paso 6 Crear un superusuario para el panel de administración
+### Paso 6 Crear un superusuario para el panel de administración
         $ python manage.py createsuperuser
 
-    - Paso 7  Registrar los modelo en el panel de administración
-        Edita el archivo "admin.py" en la aplicación y registrar el modelo:
+### Paso 7  Registrar los modelo en el panel de administración
+    Edita el archivo "admin.py" en la aplicación y registrar el modelo:
         |----------------------------------------|
         |    from django.contrib import admin    |
         |    from .models import MiModelo        |
@@ -194,7 +194,7 @@
         |    admin.site.register(MiModelo)       |
         |----------------------------------------|
 
-    - Paso 8 Levatar el proyecto
+### Paso 8 Levatar el proyecto
         $ python manage.py runserver
         
     
