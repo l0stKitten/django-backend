@@ -108,15 +108,38 @@
       • Los usuarios pueden comentar en los videos de los retos.
       
     REQUISITOS NO FUNCIONALES (RQNF)
-    - RQNF01
-      •
-      
+    - RQNF01 : Seguridad
+        • Deben poder iniciar sesión de manera segura.
+        • Debe implementarse un sistema de seguridad robusto para proteger los datos de los usuarios y prevenir contenido peligroso.
+    
+    - RQNF02 : Rendimiento
+        • La plataforma debe ser altamente receptiva para mantener la satisfacción del usuario.
+        • Los tiempos de respuesta deben ser cortos para mantener la atención del usuario.
+        
+    - RQNF03 : Escalabilidad
+        • La plataforma debe ser escalable para acomodar un crecimiento futuro en términos de usuarios y contenido.
+    
+    - RQNF04 : Almacenamiento de Contenido Multimedia
+        • Debe existir un sistema eficiente de almacenamiento y gestión de contenido multimedia, como videos y fotos.
+    
+    - RQNF04 : Privacidad de Datos
+        • Los datos recopilados para la minería de datos de sentimiento deben manejarse con alta seguridad y respetar la privacidad de los usuarios.
 
+    - RQNF05 : Usabilidad
+        • La interfaz de usuario debe ser intuitiva y fácil de usar para proporcionar una experiencia agradable al usuario.
+        • La sección de preferencias en el perfil del usuario debe ser intuitiva y fácil de usar, lo que facilita la selección y 
+          modificación de intereses(Hemos aprobado IHC).
+        
+    - RQNF06 : Cumplimiento Legal
+        • La plataforma debe cumplir con las regulaciones de privacidad de datos y derechos de autor aplicables.
+        • Deben existir políticas claras para el contenido que no cumple con las normas de la comunidad.
+        
 ##  Modelo de datos
     El modelo de datos esta conformado por las siguientes entidades.
 
-    -   Curso : En esta entidad se almacena la información de los cursos o asignaturas que se imparten en una Escuela Profesional. Ejemplo: Programación Web 2, III semestre, 02 horas teóricas, 04 horas de laboratorio, etc..
-    -   Profesor : En esta entidad se almacena los datos de los profesores que se responsabilizan del avance académico en la enseñanza de los temas planificados en cada curso. Ejemplo: Richart Escobedo, rescobedoq@unsa.edu.pe, Magister, etc.
+    -   Usuarios : Esta es la entidad principal, ya que será el que usa el sistema desde su registro hasta las acciones que se realice.
+    -   Publicaciones :
+    - 
 
     ...
 
@@ -142,23 +165,18 @@
 
 ##  Diagrama Entidad-Relación
     ...
+    
 
 ##  Administración con Django
     Se muestran los pasos realizados para crear el Proyecto, la aplicación, creacion de modelos, migraciones y habilitación del panel de administración en Django.
     ...
 
 ##  Plantillas Bootstrap
-    Se seleccionó la siguiente plantilla para el usuario final (No administrador).
-
-    Demo online:
-    URL: ...
-
-    Se muestran las actividades realizadas para adecuación de plantillas, vistas, formularios en Django.
-    ...
+    Para la aplicación desarrolada no se usó plantillas gráficas, se inició desde cero.
 
 ##  CRUD - Core Business - Clientes finales
     El núcleo de negocio del sistema de inscripciones tiene valor de aceptación para los cliente finales (alumnos) radica en realizar el proceso de inscripción propiamente, que empieza desde que:
-    1. El alumno inicia sesión.
+    1. El usuario inicia sesión.
     2. El alumno selecciona el o los cursos donde desea realizar una inscripción.
     3. El alumno selecciona el grupo de laboatorio donde desea incribirse.
     4. El alumno puede tener la posibilidad de anular una incripción por varias razones: cambio de grupo, corregir error, etc.
