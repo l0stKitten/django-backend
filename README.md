@@ -162,30 +162,30 @@
     
 
 ##  Administración con Django
-### Paso 1: Crear y ejecutar un entorno virtual 
+#### Paso 1: Crear y ejecutar un entorno virtual 
         $ python -m venv my_env
         $ .\my_env\Scripts\activate
         
-### Paso 2: Crear un nuevo proyecto Django
+#### Paso 2: Crear un nuevo proyecto Django
         $ django-admin startproject nombre_del_proyecto
         $ cd nombre_del_proyecto
 
-### Paso 3: Crear una aplicacion Django
+#### Paso 3: Crear una aplicacion Django
         $ mkdir MyWebApps
         $ cd MyWebApps
         $ django-admin startapp MyFirstApplication
     
-### Paso 4: Definir los modelos
+#### Paso 4: Definir los modelos
         Ya sea modificar el archivo models.py o crear una carpeta models y dentro de ella establecer un modelo para cada entidad.
     
-### Paso 5 Crear migraciones
+#### Paso 5 Crear migraciones
         $ python manage.py makemigrations
         $ python manage.py migrate
 
-### Paso 6 Crear un superusuario para el panel de administración
+#### Paso 6 Crear un superusuario para el panel de administración
         $ python manage.py createsuperuser
 
-### Paso 7  Registrar los modelo en el panel de administración
+#### Paso 7  Registrar los modelo en el panel de administración
     Edita el archivo "admin.py" en la aplicación y registrar el modelo:
         |----------------------------------------|
         |    from django.contrib import admin    |
@@ -194,13 +194,15 @@
         |    admin.site.register(MiModelo)       |
         |----------------------------------------|
 
-### Paso 8 Levatar el proyecto
+#### Paso 8 Levatar el proyecto
         $ python manage.py runserver
         
     
 ##  Plantillas Bootstrap
-    Para la aplicación desarrolada no se usó plantillas gráficas, se inició desde cero.
-    Se usó "Reac" materia UI, el proyecto está en este link: https://mui.com/material-ui/
+Para la aplicación desarrolada no se usó plantillas gráficas, se inició desde cero.
+
+Se usó "React" con Material-UI, la documentación y componente están es este [link](https://mui.com/material-ui/).
+
 
 ##  CRUD - Core Business - Clientes finales
     El núcleo de negocio del sistema de inscripciones tiene valor de aceptación para los cliente finales (alumnos) radica en realizar el proceso de inscripción propiamente, que empieza desde que:
@@ -214,17 +216,20 @@
     8. El usuario puede reaccionar a los retos posteados.
     9. El usuario cierra sesión.
 
-    Cada una de estas pantallas funciona y se estableció en la parte gráfica de la aplicación.
-    A continuación se muestran las actividades realizadas para su construcción:
-- Paso 1 : Maquetado
-    Se maqueto las imagenes en un maquetador de GUI's (Figma), este es el enlace del [maquetado](https://www.figma.com/file/T53LCMNa6UUuoYUMtFYTT8/Dashboard-design---Figma-variants---Light-mode-to-Dark-mode-(Community)?type=design&node-id=2%3A2&mode=design&t=V8p6c1wwip1fZZ6C-1){:target="_blank"}
+Cada una de estas pantallas funciona y se estableció en la parte gráfica de la aplicación.
+A continuación se muestran las actividades realizadas para su construcción:
 
-.
-        
-    - Paso 2 : Framework
-        Se eligió un framework para la programación e implementación de estas maquetas en pantallas interactivas y funcionales.
+#### Paso 1 : Maquetado
+Se maqueto las imagenes en un maquetador de GUI's (Figma), este es el enlace del  [maquetado](https://www.figma.com/file/T53LCMNa6UUuoYUMtFYTT8/Dashboard-design---Figma-variants---Light-mode-to-Dark-mode-(Community)?type=design&node-id=2%3A2&mode=design&t=V8p6c1wwip1fZZ6C-1).
+   
+#### Paso 2 : Framework
+Se eligió un framework para la programación e implementación de estas maquetas en pantallas interactivas y funcionales.
     
-    - Paso 3 : 
+#### Paso 3 : Programación e implementación
+Posteriormente se procedió a implementar cada pantalla modelada con el framework.
+
+#### Paso 4 : Pruebas
+Finalmente luego de programar e implementar todas las vistas se realizó las pruebas de fluidez y correcto funcionamiento.
     
 
 ##  Servicios mediante una API RESTful
