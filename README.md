@@ -405,16 +405,16 @@ En este proyecto, se optó por utilizar React como el framework de Front-End par
     
 
 ##  Sobre el proyecto
-- Github BackEnd: 
+- Github BackEnd: https://github.com/jeanusll/Django-Web.git
 - Github FrontEnd: https://github.com/l0stKitten/CrazyChallengeFrontend.git
 
-URL Proyecto:
+- URL Playlist YouTube: 
 
-URL Playlist YouTube.
-Producción de un PlayList en Youtube explicando cada una de los requerimientos.
-Video 01 - Sistema - Requisitos.
-Video 02 - Modelo de datos - DD - DER.
-etc…
+    - Video 01 - Sistema - Requisitos. 
+    - Video 02 - Modelo de datos - DD - DER.
+    - Video 03 - Back
+    - Video 04  - Front
+    - Video 05 - Funcional
 
 
 ## REFERENCIAS
