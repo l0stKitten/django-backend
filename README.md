@@ -338,12 +338,52 @@ Realizar las migraciones y levantar el proyecto
         $ python manage.py makemigrations
         $ python manage.py migrate
 
-        $ python manage.py runserver
+```
+    $ python manage.py runserver
+```
 
-##  Operaciones asíncronas AJAX
-    Se propone el uso de AJAX para realizar la carga en tiempo real de datos . Esta operación la realizará el usuario operador encargado por el DAISI.
-    Se muestran los pasos necesarios a realizar.
-    ....
+##  Operaciones asíncronas AXIOS
+Para las operaciones asíncronas, realizar solicitudes HTTP en la aplicación y conección con el backend se usó AXIOS para así evitar la recarga excesiva de la pantalla y porque su sintaxis y complejidad suele ser muy sencilla y facil de entender.
+
+
+#### Paso 1:  Crear un archivo "axios.js"
+Se creó el archivo mencionado ya que contendrá la importación que suele ser genérica para las peticiones
+```javascript
+    import axios from "axios";
+    import { PORTBACKEND } from "../config";
+
+    const instance = axios.create({
+        baseURL: PORTBACKEND,
+        withCredentials: true,
+    });
+
+    export default instance;
+```
+
+#### Paso 2: Crear un archivo "auth.js"
+Crear el archivo donde se contendrá las solicitudes a realizar.
+```javascript
+    import axios from './axios';
+    
+    export const loginRequest = (user) => {
+        axios.post('/api/user/login')
+    }
+```
+
+#### Paso 3: Manejar las respuestas y errores en cada componente
+Crear el archivo donde se contendrá las solicitudes a realizar.
+```javascript
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                await axios.get(PORTBACKEND + '/api/user/verify');
+            } catch (err) {
+                navigate('/');
+            }
+        };
+
+    fetchData();
+```
 
 ##  Investigación: Front-End.
     - Utilizar un framework para Front-End que consuma la API Django Rest-Framework.
