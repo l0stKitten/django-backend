@@ -386,9 +386,27 @@ Crear el archivo donde se contendrá las solicitudes a realizar.
 ```
 
 ##  Investigación: Front-End.
-    - Utilizar un framework para Front-End que consuma la API Django Rest-Framework.
+En este proyecto, se optó por utilizar React como el framework de Front-End para consumir la API proporcionada por Django Rest Framework (DRF). React es una biblioteca de JavaScript desarrollada por Facebook y ampliamente utilizada en el desarrollo web moderno. Se eligió React debido a sus numerosos beneficios y características que hacen que sea una elección sólida para construir interfaces de usuario interactivas y eficientes.
 
-Github del proyecto:
+#### Beneficios:
+1. Componentización: React sigue un enfoque basado en componentes, permitiendo la creación de interfaces de usuario modularizadas. Cada componente puede ser desarrollado, probado y mantenido de forma independiente, facilitando la reutilización del código y la escalabilidad del proyecto.
+
+2. Virtual DOM: React utiliza un Virtual DOM para realizar actualizaciones eficientes en la interfaz de usuario. Esto significa que en lugar de actualizar directamente el DOM cada vez que cambia el estado de la aplicación, React realiza comparaciones en un DOM virtual y solo actualiza los elementos que han cambiado, lo que mejora significativamente el rendimiento.
+
+3. React Hooks: Los Hooks de React permiten el uso de estado y otras características de React en componentes de función, eliminando la necesidad de clases en muchos casos. Esto simplifica la sintaxis y facilita la gestión del estado y del ciclo de vida de los componentes.
+
+4. Librería Activa y Comunidad Activa: React es una librería activamente mantenida con una gran comunidad de desarrolladores. Esto significa que hay una abundancia de recursos, bibliotecas y soluciones disponibles, así como actualizaciones regulares y mejoras de rendimiento.
+
+5. React Router: Facilita la navegación y el enrutamiento en la aplicación, permitiendo la creación de aplicaciones de una sola página (SPA) de manera sencilla y organizada.
+
+6. React es Declarativo: La programación declarativa de React hace que sea más fácil comprender cómo funcionan los componentes y facilita el mantenimiento del código a lo largo del tiempo.
+
+7. Gran Ecosistema: React cuenta con un amplio ecosistema de bibliotecas y herramientas que se integran fácilmente. Además, al ser parte de la biblioteca de JavaScript, puede combinarse con otras tecnologías y herramientas según las necesidades del proyecto.
+    
+
+##  Sobre el proyecto
+- Github BackEnd: 
+- Github FrontEnd: https://github.com/l0stKitten/CrazyChallengeFrontend.git
 
 URL Proyecto:
 
@@ -400,7 +418,11 @@ etc…
 
 
 ## REFERENCIAS
--   
+-   https://mui.com/material-ui/
+-   https://www.djangoproject.com/
+-   https://www.django-rest-framework.org/
+-   https://www.solbyte.com/blog/react-js-ventajas-e-inconvenientes/
+-   https://axios-http.com/docs/intro
 
 #
 
