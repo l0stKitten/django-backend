@@ -176,7 +176,7 @@
         $ django-admin startapp MyFirstApplication
     
 #### Paso 4: Definir los modelos
-        Ya sea modificar el archivo models.py o crear una carpeta models y dentro de ella establecer un modelo para cada entidad.
+Ya sea modificar el archivo models.py o crear una carpeta models y dentro de ella establecer un modelo para cada entidad.
     
 #### Paso 5 Crear migraciones
         $ python manage.py makemigrations
@@ -186,14 +186,14 @@
         $ python manage.py createsuperuser
 
 #### Paso 7  Registrar los modelo en el panel de administración
-    Edita el archivo "admin.py" en la aplicación y registrar el modelo:
-        |----------------------------------------|
-        |    from django.contrib import admin    |
-        |    from .models import MiModelo        |
-        |                                        |
-        |    admin.site.register(MiModelo)       |
-        |----------------------------------------|
-
+Edita el archivo "admin.py" en la aplicación y registrar el modelo:
+        
+ ```python
+        from django.contrib import admin
+        from .models import MiModelo
+        
+        admin.site.register(MiModelo)
+```
 #### Paso 8 Levatar el proyecto
         $ python manage.py runserver
         
@@ -234,15 +234,114 @@ Finalmente luego de programar e implementar todas las vistas se realizó las pru
 
 ##  Servicios mediante una API RESTful
     Se ha creado una aplicación que pondra a disposición cierta información para ser consumida por otros clientes HTTP.
-    1. GET : Con el método get se devolverá la lista de cursos, grupos y horarios establecidos para que el alumno sobre todo vea esta información en cualquier otro medio. En formato JSON. 
-    2. POST : Con este método se enviara el código del alumno y se devolvera sus inscripciones. En formato JSON.
+    1. GET : Con el método get se devolverá la lista de los elementos de la base de datos, ya sea por un listado general o solo obtener un registro por id, este modelo se sequirá para todas las entidades presentes en el proyecto. 
+    2. POST : Con este método se realizará la creación de entidades en el backend, además de el login y registro en el sistema.
+    3. DELETE : Este método es para la eliminación de registros de entidades  
+
+Ejemplo método post para creación de publicaciones:
+```python
+    @api_view(['POST'])
+    @token_required
+    def create_post(request):
+        token = request.COOKIES.get('token')
     
-    Ejemplo: Prueba en Página web, aplicación móvil, PDF, etc.
-    Se especifican los pasos para crear el servicio RestFul
-    ...
+        try:
+            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
+            user_id = payload.get('user_id')
+    
+            user = User.objects.get(pk=user_id)
+    
+            serializer = PostSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save(user_id=user)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except User.DoesNotExist:
+            return Response({'error': 'Usuario no encontrado'}, status=status.HTTP_404_NOT_FOUND)
+```
+Se especifican los pasos para crear el servicio RestFul
+
+#### Paso 1: Instalación de Django REST Framework
+    pip install djangorestframework
+
+#### Paso 2: Agregar 'rest_framework' a INSTALLED_APPS
+En el archivo settings.py del proyecto, debemos asegurarnos de tener 'rest_framework' en la lista INSTALLED_APPS.
+```python
+    # En archivo settings.py
+    INSTALLED_APPS = [
+        # ...
+        'rest_framework',
+        # ...
+    ]
+```
+
+#### Paso 3: Crear un serializador
+Un serializador en DRF define cómo los modelos y las consultas deben ser convertidos a JSON y viceversa. 
+Crear un archivo serializers.py o carpeta donde dentro se pongan serializadores para cada modelo
+```python
+    class PostSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Post
+            fields = ('__all__')
+```
+#### Paso 4: Crear vistas utilizando ViewSets
+Crear un archivo views.py o carpeta donde dentro se pongan view y se defina un ModelViewSet que utilizará el serializador.
+```python
+    from ..models import User, Post
+    from ..serializers import PostSerializer
+    import jwt
+    from datetime import datetime, timedelta
+    from django.conf import settings
+    from ..decorators import token_required
+
+    @api_view(['POST'])
+    @token_required
+    def create_post(request):
+        token = request.COOKIES.get('token')
+        try:
+            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
+            user_id = payload.get('user_id')
+            user = User.objects.get(pk=user_id)
+            serializer = PostSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save(user_id=user)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except User.DoesNotExist:
+            return Response({'error': 'Usuario no encontrado'}, status=status.HTTP_404_NOT_FOUND)
+```
+
+#### Paso 5: Configurar las URLs
+En el archivo urls.py de la aplicación, configurar las URLs utilizando un Router.
+```python
+    from django.urls import path, include, re_path
+    from rest_framework import routers
+    from .views.User_view import UserView
+    from .views import login_view, post_view
+    
+    router = routers.DefaultRouter()
+    router.register(r'users', UserView)
+    
+    urlpatterns = [
+        re_path('signup', login_view.signup),
+        re_path('login', login_view.login),
+        re_path('test_token', login_view.test_token),
+        re_path('post', post_view.create_post),
+        re_path('all', post_view.get_all_posts),
+        path("users/", include(router.urls)),
+    ]
+```
+
+#### Paso 6: Actualizar y ejecutar el proyecto
+Realizar las migraciones y levantar el proyecto
+        
+        $ python manage.py makemigrations
+        $ python manage.py migrate
+
+        $ python manage.py runserver
 
 ##  Operaciones asíncronas AJAX
-    Se propone el uso de AJAX para realizar la asignación de carga académica a los docentes que estan registrados. Esta operación la realizará el usuario operador encargado por el DAISI.
+    Se propone el uso de AJAX para realizar la carga en tiempo real de datos . Esta operación la realizará el usuario operador encargado por el DAISI.
     Se muestran los pasos necesarios a realizar.
     ....
 
