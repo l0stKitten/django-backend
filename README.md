@@ -123,12 +123,10 @@
         • Debe existir un sistema eficiente de almacenamiento y gestión de contenido multimedia, como videos y fotos.
     
     - RQNF04 : Privacidad de Datos
-        • Los datos recopilados para la minería de datos de sentimiento deben manejarse con alta seguridad y respetar la privacidad de los usuarios.
+        • Los datos recopilados del usuario deben manejarse con alta seguridad y respetar la privacidad de ellos.
 
     - RQNF05 : Usabilidad
         • La interfaz de usuario debe ser intuitiva y fácil de usar para proporcionar una experiencia agradable al usuario.
-        • La sección de preferencias en el perfil del usuario debe ser intuitiva y fácil de usar, lo que facilita la selección y 
-          modificación de intereses(Hemos aprobado IHC).
         
     - RQNF06 : Cumplimiento Legal
         • La plataforma debe cumplir con las regulaciones de privacidad de datos y derechos de autor aplicables.
