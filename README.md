@@ -214,10 +214,17 @@
     8. El usuario puede reaccionar a los retos posteados.
     9. El usuario cierra sesión.
 
+    Cada una de estas pantallas funciona y se estableció en la parte gráfica de la aplicación.
     A continuación se muestran las actividades realizadas para su construcción:
+    - Paso 1 : Maquetado
+        Se maqueto las imagenes en un maquetador de GUI's (Figma), este es el enlace del [maquetado](https://www.figma.com/file/T53LCMNa6UUuoYUMtFYTT8/Dashboard-design---Figma-variants---Light-mode-to-Dark-mode-(Community)?type=design&node-id=2%3A2&mode=design&t=V8p6c1wwip1fZZ6C-1){:target="_blank"}
 
-    imágenes...
-
+.
+        
+    - Paso 2 : Framework
+        Se eligió un framework para la programación e implementación de estas maquetas en pantallas interactivas y funcionales.
+    
+    - Paso 3 : 
     
 
 ##  Servicios mediante una API RESTful
